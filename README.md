@@ -1,7 +1,4 @@
 <img src="./banner.svg" width="100%" alt="banner"/>
-<br/>
-
-<img src="./banner.svg" width="100%" alt="banner"/>
 
 <br/>
 
@@ -73,10 +70,3 @@
 ![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white)
 
 ---
-
-### 📊 GitHub Stats
-
-<div align="center">
-  <img height="165em" src="https://github-readme-stats.vercel.app/api?username=Ouma122456&show_icons=true&hide_border=true&theme=midnight-purple&bg_color=040d1e&title_color=c06880&icon_color=e8a8c0&text_color=7a6070"/>
-  <img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ouma122456&layout=compact&hide_border=true&theme=midnight-purple&bg_color=040d1e&title_color=c06880&text_color=7a6070"/>
-</div>
