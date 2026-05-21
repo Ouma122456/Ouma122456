@@ -25,14 +25,6 @@ Final-year student @ ENET'Com — building intelligent fintech systems.
 
 ---
 
-### 📊 GitHub Stats
-
-<div align="center">
-  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=Ouma122456&show_icons=true&hide_border=true&theme=midnight-purple&bg_color=040d1e&title_color=00d4ff&icon_color=a78bfa&text_color=7a9ab8"/>
-  <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ouma122456&layout=compact&hide_border=true&theme=midnight-purple&bg_color=040d1e&title_color=00d4ff&text_color=7a9ab8"/>
-</div>
-
----
 
 ### 📫 Contact
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](#)
