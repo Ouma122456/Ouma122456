@@ -1,196 +1,106 @@
 <svg width="900" height="260" viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <style>
-      @keyframes pulse   { 0%,100%{opacity:.45} 50%{opacity:1} }
-      @keyframes pulse2  { 0%,100%{opacity:.35} 50%{opacity:.9} }
-      @keyframes flow    { 0%{stroke-dashoffset:140;opacity:0} 30%{opacity:.85} 100%{stroke-dashoffset:0;opacity:0} }
-      @keyframes flow2   { 0%{stroke-dashoffset:120;opacity:0} 40%{opacity:.75} 100%{stroke-dashoffset:0;opacity:0} }
-      @keyframes glow-bg { 0%,100%{fill-opacity:.05} 50%{fill-opacity:.11} }
-      .na{animation:pulse  2.4s ease-in-out infinite}
-      .nb{animation:pulse  3s   ease-in-out infinite .5s}
-      .nc{animation:pulse  2.8s ease-in-out infinite 1s}
-      .nd{animation:pulse2 2.6s ease-in-out infinite .3s}
-      .ne{animation:pulse2 3.2s ease-in-out infinite .8s}
-      .fl {stroke-dasharray:65 75;animation:flow  2.9s linear infinite}
-      .fl2{stroke-dasharray:55 85;animation:flow2 3.5s linear infinite .8s}
-      .fl3{stroke-dasharray:75 65;animation:flow  3.1s linear infinite 1.6s}
-      .gb{animation:glow-bg 4s ease-in-out infinite}
-    </style>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
-      <stop offset="0%"   stop-color="#020a14"/>
-      <stop offset="55%"  stop-color="#040d1e"/>
-      <stop offset="100%" stop-color="#020a14"/>
-    </linearGradient>
-    <linearGradient id="glassL" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
-      <stop offset="0%"   stop-color="#ffffff" stop-opacity=".065"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity=".015"/>
-    </linearGradient>
-    <linearGradient id="glassR" x1="1" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-      <stop offset="0%"   stop-color="#6d28d9" stop-opacity=".09"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity=".015"/>
-    </linearGradient>
-    <radialGradient id="cg" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   stop-color="#00d4ff" stop-opacity=".09"/>
-      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="sg">
-      <feGaussianBlur stdDeviation="2.5" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
+<defs>
+  <radialGradient id="glow" cx="50%" cy="50%" r="55%">
+    <stop offset="0%"   stop-color="#2e0d24" stop-opacity=".75"/>
+    <stop offset="100%" stop-color="#0a0510" stop-opacity="0"/>
+  </radialGradient>
+</defs>
 
-  <!-- Background -->
-  <rect width="900" height="260" fill="url(#bg)"/>
+<!-- Background -->
+<rect width="900" height="260" fill="#0a0510"/>
+<rect width="900" height="260" fill="url(#glow)"/>
 
-  <!-- Subtle grid -->
-  <line x1="0" y1="65"  x2="900" y2="65"  stroke="#ffffff" stroke-opacity=".022" stroke-width=".5"/>
-  <line x1="0" y1="130" x2="900" y2="130" stroke="#ffffff" stroke-opacity=".022" stroke-width=".5"/>
-  <line x1="0" y1="195" x2="900" y2="195" stroke="#ffffff" stroke-opacity=".022" stroke-width=".5"/>
-  <line x1="225" y1="0" x2="225" y2="260" stroke="#ffffff" stroke-opacity=".022" stroke-width=".5"/>
-  <line x1="450" y1="0" x2="450" y2="260" stroke="#ffffff" stroke-opacity=".022" stroke-width=".5"/>
-  <line x1="675" y1="0" x2="675" y2="260" stroke="#ffffff" stroke-opacity=".022" stroke-width=".5"/>
+<!-- Branch top-right (petals fall from here) -->
+<path d="M 750,0 C 775,30 800,55 840,80" stroke="#6a3050" stroke-width="1.4" fill="none" stroke-opacity=".65"/>
+<path d="M 840,80 C 860,65 882,55 900,50" stroke="#6a3050" stroke-width="1" fill="none" stroke-opacity=".55"/>
+<path d="M 790,28 C 800,46 795,60 782,72" stroke="#6a3050" stroke-width=".9" fill="none" stroke-opacity=".5"/>
 
-  <!-- ─── LEFT GLASS PANEL ─── -->
-  <rect x="18" y="16" width="375" height="228" rx="13" fill="url(#glassL)" stroke="#00d4ff" stroke-opacity=".11" stroke-width=".8"/>
-  <rect x="18" y="16" width="3"   height="228" rx="1.5" fill="#00d4ff" fill-opacity=".6"/>
+<!-- Static blossom on branch -->
+<g transform="translate(842,44)">
+  <path d="M 0,-10 C 4,-7 5,-1 0,2 C -5,-1 -4,-7 0,-10 Z" transform="rotate(0)"   fill="#ecb8d0" fill-opacity=".7"/>
+  <path d="M 0,-10 C 4,-7 5,-1 0,2 C -5,-1 -4,-7 0,-10 Z" transform="rotate(72)"  fill="#ecb8d0" fill-opacity=".65"/>
+  <path d="M 0,-10 C 4,-7 5,-1 0,2 C -5,-1 -4,-7 0,-10 Z" transform="rotate(144)" fill="#ecb8d0" fill-opacity=".7"/>
+  <path d="M 0,-10 C 4,-7 5,-1 0,2 C -5,-1 -4,-7 0,-10 Z" transform="rotate(216)" fill="#ecb8d0" fill-opacity=".65"/>
+  <path d="M 0,-10 C 4,-7 5,-1 0,2 C -5,-1 -4,-7 0,-10 Z" transform="rotate(288)" fill="#ecb8d0" fill-opacity=".7"/>
+  <circle r="2.8" fill="#fce8f4" fill-opacity=".9"/>
+</g>
+<g transform="translate(878,55) scale(.7)">
+  <path d="M 0,-10 C 4,-7 5,-1 0,2 C -5,-1 -4,-7 0,-10 Z" transform="rotate(20)"  fill="#d4789a" fill-opacity=".55"/>
+  <path d="M 0,-10 C 4,-7 5,-1 0,2 C -5,-1 -4,-7 0,-10 Z" transform="rotate(92)"  fill="#d4789a" fill-opacity=".5"/>
+  <path d="M 0,-10 C 4,-7 5,-1 0,2 C -5,-1 -4,-7 0,-10 Z" transform="rotate(164)" fill="#d4789a" fill-opacity=".55"/>
+  <path d="M 0,-10 C 4,-7 5,-1 0,2 C -5,-1 -4,-7 0,-10 Z" transform="rotate(236)" fill="#d4789a" fill-opacity=".5"/>
+  <path d="M 0,-10 C 4,-7 5,-1 0,2 C -5,-1 -4,-7 0,-10 Z" transform="rotate(308)" fill="#d4789a" fill-opacity=".55"/>
+  <circle r="2.5" fill="#fce0ee" fill-opacity=".8"/>
+</g>
 
-  <!-- Name -->
-  <text x="52" y="70" font-family="Georgia,'Times New Roman',serif" font-size="31" font-weight="700" fill="#edf3ff" letter-spacing=".4">Oumayma Abassi</text>
+<!-- ═══ ANIMATED FALLING PETALS ═══ -->
+<!-- Petal: outer <g> animates translate (fall path), inner path animates rotation -->
 
-  <!-- Title -->
-  <text x="54" y="97" font-family="'Courier New',Courier,monospace" font-size="11" fill="#00d4ff" letter-spacing="2.4">AI ENGINEER · DATA ENGINEERING · MLOPS</text>
+<g><animateTransform attributeName="transform" type="translate" from="80 -15" to="108 275" dur="6s" repeatCount="indefinite" begin="0s"/>
+<path d="M 0,-11 C 5,-7 6,0 0,3 C -6,0 -5,-7 0,-11 Z" fill="#d4789a" fill-opacity=".65">
+<animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite" begin="0s"/></path></g>
 
-  <!-- Separator -->
-  <line x1="52" y1="112" x2="368" y2="112" stroke="#00d4ff" stroke-opacity=".22" stroke-width=".5"/>
+<g><animateTransform attributeName="transform" type="translate" from="215 -15" to="190 275" dur="7.5s" repeatCount="indefinite" begin="1.2s"/>
+<path d="M 0,-9 C 4,-5 5,0 0,2 C -5,0 -4,-5 0,-9 Z" fill="#e8a8c0" fill-opacity=".55" transform="scale(.8)">
+<animateTransform attributeName="transform" type="rotate" from="30" to="390" dur="7.5s" repeatCount="indefinite" begin="1.2s"/></path></g>
 
-  <!-- Tagline -->
-  <text x="54" y="134" font-family="Georgia,serif" font-size="12.5" fill="#7a9ab8" font-style="italic">Building intelligent fintech experiences</text>
+<g><animateTransform attributeName="transform" type="translate" from="355 -15" to="382 275" dur="5.5s" repeatCount="indefinite" begin="2.4s"/>
+<path d="M 0,-12 C 6,-8 7,0 0,3 C -7,0 -6,-8 0,-12 Z" fill="#c06880" fill-opacity=".6" transform="scale(1.1)">
+<animateTransform attributeName="transform" type="rotate" from="-20" to="340" dur="5.5s" repeatCount="indefinite" begin="2.4s"/></path></g>
 
-  <!-- Pill row 1 -->
-  <rect x="52"  y="153" width="64" height="19" rx="9.5" fill="#00d4ff" fill-opacity=".07" stroke="#00d4ff" stroke-opacity=".32" stroke-width=".7"/>
-  <text x="84"  y="166.5" font-family="monospace" font-size="10" fill="#00d4ff" text-anchor="middle">Python</text>
+<g><animateTransform attributeName="transform" type="translate" from="490 -15" to="462 275" dur="6.8s" repeatCount="indefinite" begin="0.6s"/>
+<path d="M 0,-10 C 5,-6 5,0 0,2 C -5,0 -5,-6 0,-10 Z" fill="#f0c0dc" fill-opacity=".5" transform="scale(.85)">
+<animateTransform attributeName="transform" type="rotate" from="15" to="375" dur="6.8s" repeatCount="indefinite" begin="0.6s"/></path></g>
 
-  <rect x="122" y="153" width="62" height="19" rx="9.5" fill="#00d4ff" fill-opacity=".07" stroke="#00d4ff" stroke-opacity=".32" stroke-width=".7"/>
-  <text x="153" y="166.5" font-family="monospace" font-size="10" fill="#00d4ff" text-anchor="middle">FastAPI</text>
+<g><animateTransform attributeName="transform" type="translate" from="625 -15" to="650 275" dur="7.2s" repeatCount="indefinite" begin="1.8s"/>
+<path d="M 0,-11 C 5,-7 6,0 0,3 C -6,0 -5,-7 0,-11 Z" fill="#d4789a" fill-opacity=".6" transform="scale(.9)">
+<animateTransform attributeName="transform" type="rotate" from="45" to="405" dur="7.2s" repeatCount="indefinite" begin="1.8s"/></path></g>
 
-  <rect x="190" y="153" width="50" height="19" rx="9.5" fill="#00d4ff" fill-opacity=".07" stroke="#00d4ff" stroke-opacity=".32" stroke-width=".7"/>
-  <text x="215" y="166.5" font-family="monospace" font-size="10" fill="#00d4ff" text-anchor="middle">Kafka</text>
+<g><animateTransform attributeName="transform" type="translate" from="765 -15" to="742 275" dur="6.2s" repeatCount="indefinite" begin="3.1s"/>
+<path d="M 0,-9 C 4,-5 5,0 0,2 C -5,0 -4,-5 0,-9 Z" fill="#e8a8c0" fill-opacity=".58">
+<animateTransform attributeName="transform" type="rotate" from="-30" to="330" dur="6.2s" repeatCount="indefinite" begin="3.1s"/></path></g>
 
-  <rect x="246" y="153" width="56" height="19" rx="9.5" fill="#6d28d9" fill-opacity=".11" stroke="#6d28d9" stroke-opacity=".38" stroke-width=".7"/>
-  <text x="274" y="166.5" font-family="monospace" font-size="10" fill="#a78bfa" text-anchor="middle">Docker</text>
+<g><animateTransform attributeName="transform" type="translate" from="160 -15" to="132 275" dur="5s" repeatCount="indefinite" begin="4.2s"/>
+<path d="M 0,-12 C 6,-8 7,0 0,3 C -7,0 -6,-8 0,-12 Z" fill="#c06880" fill-opacity=".55" transform="scale(1.2)">
+<animateTransform attributeName="transform" type="rotate" from="60" to="420" dur="5s" repeatCount="indefinite" begin="4.2s"/></path></g>
 
-  <rect x="308" y="153" width="60" height="19" rx="9.5" fill="#6d28d9" fill-opacity=".11" stroke="#6d28d9" stroke-opacity=".38" stroke-width=".7"/>
-  <text x="338" y="166.5" font-family="monospace" font-size="10" fill="#a78bfa" text-anchor="middle">K8s · ML</text>
+<g><animateTransform attributeName="transform" type="translate" from="710 -15" to="736 275" dur="7s" repeatCount="indefinite" begin="0.9s"/>
+<path d="M 0,-10 C 5,-6 5,0 0,2 C -5,0 -5,-6 0,-10 Z" fill="#f0c0dc" fill-opacity=".52" transform="scale(.8)">
+<animateTransform attributeName="transform" type="rotate" from="10" to="370" dur="7s" repeatCount="indefinite" begin="0.9s"/></path></g>
 
-  <!-- Pill row 2 -->
-  <rect x="52"  y="178" width="58" height="19" rx="9.5" fill="#00d4ff" fill-opacity=".04" stroke="#00d4ff" stroke-opacity=".2" stroke-width=".7"/>
-  <text x="81"  y="191.5" font-family="monospace" font-size="10" fill="#5fa0be" text-anchor="middle">MLflow</text>
+<g><animateTransform attributeName="transform" type="translate" from="285 -15" to="260 275" dur="6.4s" repeatCount="indefinite" begin="3.6s"/>
+<path d="M 0,-11 C 5,-7 6,0 0,3 C -6,0 -5,-7 0,-11 Z" fill="#d4789a" fill-opacity=".5" transform="scale(.75)">
+<animateTransform attributeName="transform" type="rotate" from="-45" to="315" dur="6.4s" repeatCount="indefinite" begin="3.6s"/></path></g>
 
-  <rect x="116" y="178" width="56" height="19" rx="9.5" fill="#00d4ff" fill-opacity=".04" stroke="#00d4ff" stroke-opacity=".2" stroke-width=".7"/>
-  <text x="144" y="191.5" font-family="monospace" font-size="10" fill="#5fa0be" text-anchor="middle">Qdrant</text>
+<g><animateTransform attributeName="transform" type="translate" from="855 -15" to="875 275" dur="5.8s" repeatCount="indefinite" begin="2s"/>
+<path d="M 0,-9 C 4,-5 5,0 0,2 C -5,0 -4,-5 0,-9 Z" fill="#e8a8c0" fill-opacity=".55" transform="scale(.85)">
+<animateTransform attributeName="transform" type="rotate" from="25" to="385" dur="5.8s" repeatCount="indefinite" begin="2s"/></path></g>
 
-  <rect x="178" y="178" width="44" height="19" rx="9.5" fill="#00d4ff" fill-opacity=".04" stroke="#00d4ff" stroke-opacity=".2" stroke-width=".7"/>
-  <text x="200" y="191.5" font-family="monospace" font-size="10" fill="#5fa0be" text-anchor="middle">RAG</text>
+<g><animateTransform attributeName="transform" type="translate" from="50 -15" to="28 275" dur="7.8s" repeatCount="indefinite" begin="2.7s"/>
+<path d="M 0,-10 C 5,-6 5,0 0,2 C -5,0 -5,-6 0,-10 Z" fill="#c06880" fill-opacity=".48" transform="scale(1.1)">
+<animateTransform attributeName="transform" type="rotate" from="-10" to="350" dur="7.8s" repeatCount="indefinite" begin="2.7s"/></path></g>
 
-  <rect x="228" y="178" width="42" height="19" rx="9.5" fill="#6d28d9" fill-opacity=".07" stroke="#6d28d9" stroke-opacity=".25" stroke-width=".7"/>
-  <text x="249" y="191.5" font-family="monospace" font-size="10" fill="#9470d4" text-anchor="middle">LLM</text>
+<g><animateTransform attributeName="transform" type="translate" from="440 -15" to="458 275" dur="8.5s" repeatCount="indefinite" begin="5s"/>
+<path d="M 0,-11 C 5,-7 6,0 0,3 C -6,0 -5,-7 0,-11 Z" fill="#f0c0dc" fill-opacity=".45" transform="scale(.7)">
+<animateTransform attributeName="transform" type="rotate" from="55" to="415" dur="8.5s" repeatCount="indefinite" begin="5s"/></path></g>
 
-  <rect x="276" y="178" width="82" height="19" rx="9.5" fill="#6d28d9" fill-opacity=".07" stroke="#6d28d9" stroke-opacity=".25" stroke-width=".7"/>
-  <text x="317" y="191.5" font-family="monospace" font-size="10" fill="#9470d4" text-anchor="middle">LoRA/QLoRA</text>
+<!-- ══ TEXT ══ -->
+<text x="450" y="90" text-anchor="middle"
+      font-family="'Courier New',Courier,monospace"
+      font-size="13" fill="#7a4060" letter-spacing="1">Hello, I'm</text>
 
-  <!-- Footer text -->
-  <text x="54" y="228" font-family="monospace" font-size="9.5" fill="#2e4560">📍  ENET'Com, Sfax · Tunisia  ·  Azure Certified  ·  IEEE Member</text>
+<text x="450" y="140" text-anchor="middle"
+      font-family="Georgia,'Times New Roman',serif"
+      font-size="44" font-weight="700" fill="#f0d8e8" letter-spacing=".3">Oumayma Abassi</text>
 
-  <!-- ─── CENTER: Neural Network ─── -->
-  <!-- Ambient glow -->
-  <ellipse cx="497" cy="130" rx="78" ry="68" fill="url(#cg)" class="gb"/>
+<text x="450" y="170" text-anchor="middle"
+      font-family="'Courier New',Courier,monospace"
+      font-size="12.5" fill="#b07090" letter-spacing="2">AI Engineer  &amp;  Data Engineer</text>
 
-  <!-- Layer labels -->
-  <text x="430" y="46" font-family="monospace" font-size="7.5" fill="#213348" text-anchor="middle">INPUT</text>
-  <text x="497" y="46" font-family="monospace" font-size="7.5" fill="#213348" text-anchor="middle">HIDDEN</text>
-  <text x="564" y="46" font-family="monospace" font-size="7.5" fill="#213348" text-anchor="middle">OUTPUT</text>
+<line x1="330" y1="186" x2="570" y2="186" stroke="#c06880" stroke-opacity=".2" stroke-width=".6"/>
 
-  <!-- Static connections L1→L2 -->
-  <line x1="430" y1="78"  x2="497" y2="98"  stroke="#00d4ff" stroke-opacity=".11" stroke-width=".7"/>
-  <line x1="430" y1="78"  x2="497" y2="143" stroke="#00d4ff" stroke-opacity=".07" stroke-width=".7"/>
-  <line x1="430" y1="78"  x2="497" y2="188" stroke="#00d4ff" stroke-opacity=".05" stroke-width=".7"/>
-  <line x1="430" y1="130" x2="497" y2="98"  stroke="#00d4ff" stroke-opacity=".09" stroke-width=".7"/>
-  <line x1="430" y1="130" x2="497" y2="143" stroke="#00d4ff" stroke-opacity=".14" stroke-width=".7"/>
-  <line x1="430" y1="130" x2="497" y2="188" stroke="#00d4ff" stroke-opacity=".07" stroke-width=".7"/>
-  <line x1="430" y1="182" x2="497" y2="98"  stroke="#00d4ff" stroke-opacity=".05" stroke-width=".7"/>
-  <line x1="430" y1="182" x2="497" y2="143" stroke="#00d4ff" stroke-opacity=".09" stroke-width=".7"/>
-  <line x1="430" y1="182" x2="497" y2="188" stroke="#00d4ff" stroke-opacity=".13" stroke-width=".7"/>
-
-  <!-- Static connections L2→output -->
-  <line x1="497" y1="98"  x2="564" y2="130" stroke="#7c3aed" stroke-opacity=".13" stroke-width=".7"/>
-  <line x1="497" y1="143" x2="564" y2="130" stroke="#7c3aed" stroke-opacity=".17" stroke-width=".7"/>
-  <line x1="497" y1="188" x2="564" y2="130" stroke="#7c3aed" stroke-opacity=".13" stroke-width=".7"/>
-
-  <!-- Animated flow -->
-  <line x1="430" y1="130" x2="497" y2="143" stroke="#00d4ff" stroke-width="1.2" stroke-opacity=".9" class="fl"/>
-  <line x1="497" y1="143" x2="564" y2="130" stroke="#a78bfa" stroke-width="1.2" stroke-opacity=".9" class="fl2"/>
-  <line x1="430" y1="78"  x2="497" y2="98"  stroke="#00d4ff" stroke-width="1.0" stroke-opacity=".8" class="fl3"/>
-
-  <!-- Input nodes -->
-  <circle cx="430" cy="78"  r="5.5" fill="#020a14" stroke="#00d4ff" stroke-opacity=".55" stroke-width="1.2"/>
-  <circle cx="430" cy="78"  r="2.3" fill="#00d4ff" class="na"/>
-  <circle cx="430" cy="130" r="5.5" fill="#020a14" stroke="#00d4ff" stroke-opacity=".55" stroke-width="1.2"/>
-  <circle cx="430" cy="130" r="2.3" fill="#00d4ff" class="nb"/>
-  <circle cx="430" cy="182" r="5.5" fill="#020a14" stroke="#00d4ff" stroke-opacity=".55" stroke-width="1.2"/>
-  <circle cx="430" cy="182" r="2.3" fill="#00d4ff" class="nc"/>
-
-  <!-- Hidden nodes -->
-  <circle cx="497" cy="98"  r="5.5" fill="#020a14" stroke="#7c3aed" stroke-opacity=".5" stroke-width="1.2"/>
-  <circle cx="497" cy="98"  r="2.3" fill="#a78bfa" class="nd"/>
-  <circle cx="497" cy="143" r="5.5" fill="#020a14" stroke="#7c3aed" stroke-opacity=".55" stroke-width="1.2"/>
-  <circle cx="497" cy="143" r="2.3" fill="#a78bfa" class="na"/>
-  <circle cx="497" cy="188" r="5.5" fill="#020a14" stroke="#7c3aed" stroke-opacity=".5" stroke-width="1.2"/>
-  <circle cx="497" cy="188" r="2.3" fill="#a78bfa" class="ne"/>
-
-  <!-- Output node -->
-  <circle cx="564" cy="130" r="7.5" fill="#020a14" stroke="#00d4ff" stroke-opacity=".65" stroke-width="1.5" filter="url(#sg)"/>
-  <circle cx="564" cy="130" r="3.2" fill="#00d4ff" class="nb"/>
-
-  <!-- ─── RIGHT GLASS PANEL ─── -->
-  <rect x="608" y="16" width="274" height="228" rx="13" fill="url(#glassR)" stroke="#6d28d9" stroke-opacity=".13" stroke-width=".8"/>
-  <rect x="608" y="16" width="274" height="3"   rx="1.5" fill="#6d28d9" fill-opacity=".5"/>
-
-  <!-- Header -->
-  <text x="628" y="50" font-family="monospace" font-size="9.5" fill="#7c3aed" letter-spacing="2">EXPERTISE</text>
-  <line x1="628" y1="57" x2="860" y2="57" stroke="#6d28d9" stroke-opacity=".16" stroke-width=".5"/>
-
-  <!-- Bars -->
-  <text x="628" y="80"  font-family="monospace" font-size="10" fill="#7a9ab8">Python / ML</text>
-  <rect x="730" y="71"  width="108" height="5" rx="2.5" fill="#ffffff" fill-opacity=".04"/>
-  <rect x="730" y="71"  width="103" height="5" rx="2.5" fill="#00d4ff" fill-opacity=".72"/>
-  <text x="846" y="79"  font-family="monospace" font-size="8.5" fill="#2e4560">95%</text>
-
-  <text x="628" y="99"  font-family="monospace" font-size="10" fill="#7a9ab8">Data Eng.</text>
-  <rect x="730" y="90"  width="108" height="5" rx="2.5" fill="#ffffff" fill-opacity=".04"/>
-  <rect x="730" y="90"  width="97"  height="5" rx="2.5" fill="#00d4ff" fill-opacity=".72"/>
-  <text x="846" y="98"  font-family="monospace" font-size="8.5" fill="#2e4560">90%</text>
-
-  <text x="628" y="118" font-family="monospace" font-size="10" fill="#7a9ab8">MLOps / CI-CD</text>
-  <rect x="730" y="109" width="108" height="5" rx="2.5" fill="#ffffff" fill-opacity=".04"/>
-  <rect x="730" y="109" width="92"  height="5" rx="2.5" fill="#a78bfa" fill-opacity=".72"/>
-  <text x="846" y="117" font-family="monospace" font-size="8.5" fill="#2e4560">85%</text>
-
-  <text x="628" y="137" font-family="monospace" font-size="10" fill="#7a9ab8">NLP / RAG / LLM</text>
-  <rect x="730" y="128" width="108" height="5" rx="2.5" fill="#ffffff" fill-opacity=".04"/>
-  <rect x="730" y="128" width="86"  height="5" rx="2.5" fill="#a78bfa" fill-opacity=".72"/>
-  <text x="846" y="136" font-family="monospace" font-size="8.5" fill="#2e4560">80%</text>
-
-  <text x="628" y="156" font-family="monospace" font-size="10" fill="#7a9ab8">Cloud / DevOps</text>
-  <rect x="730" y="147" width="108" height="5" rx="2.5" fill="#ffffff" fill-opacity=".04"/>
-  <rect x="730" y="147" width="81"  height="5" rx="2.5" fill="#a78bfa" fill-opacity=".6"/>
-  <text x="846" y="155" font-family="monospace" font-size="8.5" fill="#2e4560">75%</text>
-
-  <line x1="628" y1="170" x2="860" y2="170" stroke="#ffffff" stroke-opacity=".045" stroke-width=".5"/>
-
-  <!-- Certs / Badges -->
-  <text x="628" y="187" font-family="monospace" font-size="9" fill="#2e4560">☁  Azure Fundamentals &amp; Data Fundamentals</text>
-  <text x="628" y="203" font-family="monospace" font-size="9" fill="#2e4560">⚙  ENET'Com · Data Engineering &amp; Decision Sys.</text>
-  <text x="628" y="219" font-family="monospace" font-size="9" fill="#2e4560">◈  IEEE Member  ·  ENACTUS Vice Team Lead</text>
-  <text x="628" y="234" font-family="monospace" font-size="9" fill="#2e4560">◈  Public Speaking Certified · 4ST Training</text>
+<text x="450" y="208" text-anchor="middle"
+      font-family="Georgia,serif"
+      font-size="14" fill="#5a3048" font-style="italic">Turning data into intelligence.</text>
 
 </svg>
