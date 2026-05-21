@@ -1,4 +1,4 @@
-
+<img src="./banner.svg" width="100%" alt="banner"/>
 <br/>
 
 👋 Hi, I'm **Oumayma Abassi**
