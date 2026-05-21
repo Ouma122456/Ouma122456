@@ -1,4 +1,3 @@
-<img src="./banner.svg" alt="Oumayma Abassi" width="100%"/>
 
 <br/>
 
